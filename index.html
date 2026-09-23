@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff4f9a">
+<title>Happy 21st Birthday, Mekha Hari! 🎂</title>
+<style>
+  :root{
+    --pink:#ff4f9a; --rose:#ff7eb6; --purple:#8d5cff; --gold:#ffd86b;
+    --cream:#fff8fb; --ink:#35152b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink); background:
+      radial-gradient(circle at 15% 10%, #ffe2ef 0 8%, transparent 28%),
+      radial-gradient(circle at 85% 20%, #e9dcff 0 7%, transparent 26%),
+      linear-gradient(135deg,#fff8fb,#f7efff 55%,#fff5ea);
+    overflow-x:hidden;
+  }
+  .sparkle{position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.35;
+    background-image:radial-gradient(#fff 1px,transparent 1px);
+    background-size:42px 42px; animation:drift 14s linear infinite}
+  @keyframes drift{to{background-position:42px 84px}}
+  .hero{min-height:100svh; display:grid; place-items:center; padding:32px 18px; position:relative}
+  .card{
+    width:min(900px,100%); padding:28px 18px 34px; border-radius:32px;
+    background:rgba(255,255,255,.72); backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.9); box-shadow:0 24px 80px rgba(95,34,86,.16);
+    text-align:center; position:relative; z-index:3;
+  }
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:#a34c83}
+  h1{font-size:clamp(2.1rem,9vw,5rem);line-height:.95;margin:10px 0 6px;
+     background:linear-gradient(90deg,#ff3f92,#8b55ff,#ff9a55);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .age{font-size:1.05rem;font-weight:700;margin-bottom:22px}
+  .hint{font-size:.9rem;opacity:.7;margin-top:18px}
+  .cake-wrap{height:330px;display:grid;place-items:end center;position:relative;cursor:pointer;user-select:none}
+  .cake{width:245px; position:relative; transform-origin:center bottom; transition:.35s}
+  .cake:hover{transform:scale(1.03)}
+  .cake.shake{animation:cakeshake .65s ease}
+  @keyframes cakeshake{20%{transform:rotate(-5deg) scale(1.04)}40%{transform:rotate(5deg) scale(1.05)}60%{transform:rotate(-3deg)}80%{transform:rotate(3deg)}100%{transform:none}}
+  .plate{height:22px;background:#d7b4d2;border-radius:50%;box-shadow:0 9px 0 #b995b4;width:280px;margin:auto}
+  .tier{height:78px;border-radius:18px 18px 24px 24px;background:linear-gradient(#ffb7d4,#ff72a9);
+    margin:0 auto;box-shadow:inset 0 -12px 0 rgba(174,34,97,.1);position:relative}
+  .tier.top{width:205px;height:65px;border-radius:18px 18px 14px 14px;margin-bottom:-7px}
+  .tier.mid{width:235px}
+  .drip{position:absolute;top:0;left:15px;right:15px;height:22px;background:#fff3fb;border-radius:0 0 14px 14px}
+  .sprinkle{position:absolute;width:8px;height:3px;border-radius:3px;background:#8d5cff}
+  .s1{left:35px;top:45px}.s2{left:95px;top:50px;background:#ffd85f}.s3{right:45px;top:34px;background:#ff5d72}.s4{right:82px;top:55px;background:#67c7ff}
+  .candle-row{height:70px;display:flex;justify-content:center;gap:18px;position:relative;z-index:4}
+  .candle{width:13px;height:55px;border-radius:5px 5px 3px 3px;background:repeating-linear-gradient(135deg,#fff 0 6px,#ff6da8 6px 12px);position:relative}
+  .flame{position:absolute;left:50%;top:-25px;transform:translateX(-50%);width:17px;height:25px;background:linear-gradient(#fff28b,#ff8b00 65%,#ff4b00);border-radius:50% 50% 45% 45%;filter:drop-shadow(0 0 9px #ffb21c);animation:flicker .45s infinite alternate}
+  @keyframes flicker{to{transform:translateX(-50%) scale(.78,.95);opacity:.75}}
+  .candle.out .flame{display:none}
+  .reveal{max-height:0;overflow:hidden;opacity:0;transition:1s ease;transform:translateY(15px)}
+  .revealed .reveal{max-height:500px;opacity:1;transform:none}
+  .wish{font-size:clamp(1.4rem,5vw,2.3rem);font-weight:900;margin:12px 0 6px}
+  .quote{font-family:Georgia,serif;font-style:italic;font-size:1rem;line-height:1.7;max-width:650px;margin:10px auto 18px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:0;border-radius:999px;
+    background:#35152b;color:white;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 10px 24px rgba(53,21,43,.2)}
+  section{width:min(1050px,100%);margin:auto;padding:55px 18px}
+  .section-title{text-align:center;font-size:clamp(1.8rem,6vw,3rem);margin:0 0 10px}
+  .section-sub{text-align:center;opacity:.7;margin:0 auto 26px;max-width:650px}
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+  .photo{
+    grid-column:span 4; position:relative; border-radius:22px;overflow:hidden;background:white;
+    box-shadow:0 14px 30px rgba(66,31,65,.13); aspect-ratio:4/5;
+    transform:translateY(0) rotate(var(--r)); transition:transform .35s, box-shadow .35s;
+  }
+  .photo:nth-child(1),.photo:nth-child(5){grid-column:span 5}
+  .photo:nth-child(2),.photo:nth-child(4),.photo:nth-child(7){grid-column:span 7}
+  .photo:nth-child(3),.photo:nth-child(6){grid-column:span 5}
+  .photo:hover{transform:translateY(-8px) rotate(0deg) scale(1.015);box-shadow:0 24px 45px rgba(66,31,65,.2)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo span{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.85);padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:800}
+  .video-card{background:#fff;border-radius:28px;padding:12px;box-shadow:0 20px 50px rgba(66,31,65,.14)}
+  video{width:100%;display:block;border-radius:20px;max-height:75vh;background:#111}
+  footer{text-align:center;padding:35px 18px 55px;opacity:.72;font-size:.9rem}
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:20}
+  .toast{position:fixed;left:50%;top:16px;transform:translate(-50%,-130%);background:#35152b;color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;z-index:30;transition:.5s}
+  .toast.show{transform:translate(-50%,0)}
+  @media(max-width:700px){
+    .card{border-radius:24px;padding:24px 12px}
+    .cake-wrap{height:290px}
+    .cake{transform:scale(.88)}
+    .gallery{gap:10px}
+    .photo,.photo:nth-child(n){grid-column:span 6}
+  }
+</style>
+</head>
+<body>
+<div class="sparkle"></div>
+<canvas id="confetti"></canvas>
+<div id="toast" class="toast">🎉 Happy 21st Birthday, Mekha Hari! 🎉</div>
+
+<header class="hero" id="top">
+  <div class="card" id="mainCard">
+    <div class="eyebrow">A little celebration made with love</div>
+    <h1>Happy Birthday<br>Mekha Hari! 💖</h1>
+    <div class="age">✨ 21 years young ✨</div>
+
+    <div class="cake-wrap" id="cakeButton" aria-label="Press the cake to reveal the birthday wish">
+      <div class="cake" id="cake">
+        <div class="candle-row">
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+        </div>
+        <div class="tier top">
+          <div class="drip"></div><i class="sprinkle s1"></i><i class="sprinkle s2"></i>
+        </div>
+        <div class="tier mid">
+          <i class="sprinkle s3"></i><i class="sprinkle s4"></i>
+        </div>
+        <div class="plate"></div>
+      </div>
+    </div>
+
+    <div class="hint">👆 Tap / press the cake to make the celebration explode!</div>
+
+    <div class="reveal" id="reveal">
+      <div class="wish">🎊 HAPPY 21ST BIRTHDAY, MEKHA! 🎊</div>
+      <p class="quote">“May this new chapter bring you countless reasons to smile, beautiful memories to keep, and dreams that turn into reality.”</p>
+      <a class="btn" href="#memories">💫 Open the memories</a>
+    </div>
+  </div>
+</header>
+
+<section id="memories">
+  <h2 class="section-title">Little Moments, Big Memories 📸</h2>
+  <p class="section-sub">A moving little gallery of smiles, adventures and moments worth keeping forever.</p>
+  <div class="gallery">
+    <figure class="photo" style="--r:-1.5deg"><img src="assets/photo-1.jpg" alt="Mekha outdoors"><span>🌿 Sunshine</span></figure>
+    <figure class="photo" style="--r:1.3deg"><img src="assets/photo-2.jpg" alt="Mekha at a celebration"><span>🌸 Celebration</span></figure>
+    <figure class="photo" style="--r:-.8deg"><img src="assets/photo-3.jpg" alt="Mekha outdoors"><span>☁️ Good vibes</span></figure>
+    <figure class="photo" style="--r:1.8deg"><img src="assets/photo-4.jpg" alt="Mekha smiling"><span>🍰 Sweet moments</span></figure>
+    <figure class="photo" style="--r:-1deg"><img src="assets/photo-5.jpg" alt="Mekha in nature"><span>🌱 Nature girl</span></figure>
+    <figure class="photo" style="--r:1deg"><img src="assets/photo-6.jpg" alt="A happy memory"><span>💛 Together</span></figure>
+    <figure class="photo" style="--r:-1.6deg"><img src="assets/photo-7.jpg" alt="Birthday memory"><span>💞 Forever memories</span></figure>
+  </div>
+</section>
+
+<section id="video">
+  <h2 class="section-title">🎬 One More Memory</h2>
+  <p class="section-sub">Press play and relive the moment.</p>
+  <div class="video-card">
+    <video controls playsinline preload="metadata">
+      <source src="assets/memory-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<section>
+  <div class="card" style="margin:auto">
+    <div class="eyebrow">Birthday note</div>
+    <h2 class="section-title" style="margin-top:8px">Keep smiling, Mekha 🌷</h2>
+    <p class="quote">“21 is not just a number — it is a doorway to new stories, new places, new people and new dreams. Keep being wonderfully you.”</p>
+    <a class="btn" href="#top">🎂 Celebrate again</a>
+  </div>
+</section>
+
+<footer>Made specially for Mekha Hari • 21st Birthday 💕</footer>
+
+<script>
+const cakeButton = document.getElementById('cakeButton');
+const cake = document.getElementById('cake');
+const card = document.getElementById('mainCard');
+const toast = document.getElementById('toast');
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+let opened = false, particles = [];
+
+function resize(){ canvas.width = innerWidth * devicePixelRatio; canvas.height = innerHeight * devicePixelRatio; }
+addEventListener('resize', resize); resize();
+
+function burst(){
+  const colors = ['#ff4f9a','#8d5cff','#ffd86b','#55d6be','#ff7b54','#ffffff'];
+  for(let i=0;i<180;i++){
+    particles.push({
+      x:innerWidth/2, y:innerHeight*.47,
+      vx:(Math.random()-.5)*(8+Math.random()*8),
+      vy:-(3+Math.random()*11), g:.18+Math.random()*.12,
+      s:3+Math.random()*7, a:1, rot:Math.random()*Math.PI,
+      vr:(Math.random()-.5)*.3, c:colors[(Math.random()*colors.length)|0]
+    });
+  }
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),3000);
+}
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.save(); ctx.scale(devicePixelRatio,devicePixelRatio);
+  particles = particles.filter(p=>p.a>.02 && p.y<innerHeight+40);
+  for(const p of particles){
+    p.x+=p.vx; p.vy+=p.g*8; p.y+=p.vy; p.rot+=p.vr; p.a*=.992;
+    ctx.save(); ctx.globalAlpha=p.a; ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+    ctx.fillStyle=p.c; ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6); ctx.restore();
+  }
+  ctx.restore(); requestAnimationFrame(animate);
+}
+animate();
+
+cakeButton.addEventListener('click', ()=>{
+  if(!opened){
+    opened=true;
+    cake.classList.add('shake');
+    document.querySelectorAll('.candle').forEach(c=>c.classList.add('out'));
+    card.classList.add('revealed');
+    burst();
+    setTimeout(()=>document.getElementById('memories').scrollIntoView({behavior:'smooth',block:'start'}),2200);
+  }else{
+    burst();
+  }
+});
+
+// Gentle automatic floating/tilting of photos.
+const photos=[...document.querySelectorAll('.photo')];
+let t=0;
+setInterval(()=>{
+  t++;
+  photos.forEach((p,i)=>{
+    const y=Math.sin((t+i)*.55)*3;
+    p.style.translate=`0 ${y}px`;
+  });
+},900);
+</script>
+</body>
+</html>
